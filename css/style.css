@@ -62,10 +62,47 @@ body {
   font-weight: 600;
   font-size: 30px;
   letter-spacing: 30px;
+  animation: moveToLeft 1s ease-out;
 }
 .heading-sub {
   display: inline-block;
   font-size: 15px;
   font-weight: 700;
   letter-spacing: 13.2px;
+  animation: moveToRight 1s ease-out;
+  margin-bottom: 20px;
 }
+
+@keyframes moveToLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80% {
+    transform: translateX(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes moveToRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+
+  80% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
