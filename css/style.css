@@ -53,14 +53,14 @@ body {
   .heading-primary--main {
     display: inline-block;
     font-weight: 600;
-    font-size: 3rem;
+    font-size: 4rem;
     letter-spacing: 3rem;
     animation: moveToLeft 1s ease-out; }
   .heading-primary--sub {
     display: inline-block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: 1.3rem;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 1rem;
     animation: moveToRight 1s ease-out;
     margin-bottom: 40px; }
 
@@ -70,19 +70,51 @@ body {
   background-clip: text;
   color: transparent;
   font-weight: 700;
-  font-size: 2.2rem;
+  font-size: 2rem;
   text-transform: uppercase;
   transition: all 0.2s;
-  letter-spacing: 0.3rem; }
+  letter-spacing: 0.2rem; }
   .heading-secondary:hover {
     transform: skewY(3deg) skewX(15deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
 
+.heading-tertairy {
+  text-transform: uppercase; }
+
 .u-text-center {
   text-align: center; }
 
-.u-mb-5 {
+.u-mb-small {
+  margin-bottom: 1.1rem; }
+
+.u-mb-medium {
+  margin-bottom: 3rem; }
+
+.u-mb-large {
   margin-bottom: 5rem; }
+
+.composition {
+  position: relative; }
+  .composition__image {
+    width: 55%;
+    border-radius: 5px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 10;
+    transition: all 0.2s; }
+    .composition__image--p1 {
+      top: 0;
+      left: 0; }
+    .composition__image--p2 {
+      top: 3rem;
+      right: 1rem; }
+    .composition__image--p3 {
+      top: 10rem;
+      left: 8rem; }
+    .composition__image:hover {
+      transform: scale(1.1) translateY(3px);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
 
 .btn:link, .btn:visited {
   display: inline-block;
@@ -154,9 +186,8 @@ body {
     display: table;
     clear: both; }
   .row [class^="col-"] {
-    background-color: orangered;
-    color: #fff;
-    float: left; }
+    float: left;
+    padding: 0 2rem; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
   .row .col-1-of-1 {
@@ -178,3 +209,5 @@ body {
   background-color: #eee;
   padding: 25rem 0;
   margin-top: -20vh; }
+  .section-about .paragraph:not(:last-child) {
+    margin-bottom: 2rem; }
