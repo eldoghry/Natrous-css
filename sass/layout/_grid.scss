@@ -1,0 +1,57 @@
+.row {
+  max-width: $grid-max-width;
+  margin: 0 auto;
+
+  &:not(:last-child) {
+    margin-bottom: $grid-gutter-vertical;
+  }
+
+  @include clearfix;
+
+  //selecting all classes ^ started with col-
+  [class^="col-"] {
+    // background-color: orangered;
+    // color: $color-white;
+    float: left;
+    // padding: 0 2rem;
+
+    &:not(:last-child) {
+      margin-right: $grid-gutter-horizantal;
+    }
+  }
+
+  .col-1-of-1 {
+    width: 100%;
+  }
+
+  .col-1-of-2 {
+    width: calc((100% - #{$grid-gutter-horizantal}) / 2);
+  }
+
+  .col-1-of-3 {
+    width: calc((100% - (#{$grid-gutter-horizantal} * 2)) / 3);
+  }
+
+  .col-2-of-3 {
+    width: calc(
+      (((100% - (#{$grid-gutter-horizantal} * 2)) / 3) * 2) + #{$grid-gutter-horizantal}
+    );
+  }
+
+  .col-1-of-4 {
+    width: calc((100% - (#{$grid-gutter-horizantal} * 3)) / 4);
+  }
+
+  .col-2-of-4 {
+    width: calc(
+      (((100% - (#{$grid-gutter-horizantal} * 3)) / 4) * 2) + #{$grid-gutter-horizantal}
+    );
+  }
+
+  .col-3-of-4 {
+    width: calc(
+      ((((100% - (#{$grid-gutter-horizantal} * 3)) / 4)) * 3) +
+        (2 * #{$grid-gutter-horizantal})
+    );
+  }
+}
