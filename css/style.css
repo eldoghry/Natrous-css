@@ -93,6 +93,15 @@ body {
 .u-mb-large {
   margin-bottom: 5rem; }
 
+.u-mt-small {
+  margin-top: 1.1rem; }
+
+.u-mt-medium {
+  margin-top: 3rem; }
+
+.u-mt-large {
+  margin-top: 5rem; }
+
 .composition {
   position: relative; }
   .composition__image {
@@ -328,6 +337,25 @@ body {
 
 .btn-animate {
   animation: moveToTop 1s ease-out; }
+
+.btn-text:link, .btn-text:visited {
+  color: #55c57a;
+  padding: 1rem;
+  text-decoration: none;
+  text-transform: capitalize;
+  display: inline-block;
+  border-bottom: 1px solid #55c57a; }
+
+.btn-text:hover {
+  border-radius: 3px;
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  background-color: #55c57a;
+  color: #fff; }
+
+.btn-text:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
 .header {
   height: 95vh;
