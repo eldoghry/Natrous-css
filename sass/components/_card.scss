@@ -1,54 +1,181 @@
 .card {
-  background-color: $color-white;
-  border-radius: $border-radius-small;
-  height: 50rem;
-  //   padding: 6rem;
   position: relative;
-  box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
-  overflow: hidden;
-  transition: all 3s;
+  -moz-perspective: 1500rem;
   perspective: 1500rem;
+  height: 52rem;
 
   &__side {
+    height: 100%;
+    overflow: hidden;
+    border-radius: $border-radius-small;
+    box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    transition: transform 3s ease;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 
     &--front {
-      background-color: aqua;
+      background-color: $color-white;
     }
 
     &--back {
-      //   background-color: yellow;
-      //   opacity: 0;
       transform: rotateY(-180deg);
+
+      &-1 {
+        background: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        );
+      }
+
+      &-2 {
+        background: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        );
+      }
+
+      &-3 {
+        background: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        );
+      }
     }
   }
 
-  &:hover &--front {
-    // transform: rotateY(180deg);
+  &:hover &__side--front {
+    transform: rotateY(180deg);
   }
 
   &:hover &__side--back {
+    opacity: 1;
     transform: rotateY(0deg);
   }
 
   &__picture {
-    background: linear-gradient(
-        to right bottom,
-        $color-secondary-light,
-        $color-secondary-dark
-      ),
-      url("./../../img/nat-4.jpg");
+    height: 18rem;
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary-dark
+        ),
+        url("./../../img/nat-4.jpg");
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary-light,
+          $color-primary-dark
+        ),
+        url("./../../img/nat-5.jpg");
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-tertiary-light,
+          $color-tertiary-dark
+        ),
+        url("./../../img/nat-6.jpg");
+    }
+
     background-size: cover;
     background-position: top;
     background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
 
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    height: 20rem;
+  &__heading {
+    position: absolute;
+    top: 8rem;
+    right: 2rem;
+    text-align: right;
+    width: 75%;
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: $color-white;
+    text-transform: uppercase;
+
+    &--span {
+      padding: 1.1rem 2rem;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      &-1 {
+        background: linear-gradient(
+          to right bottom,
+          rgba($color-secondary-light, 0.8),
+          rgba($color-secondary-dark, 0.8)
+        );
+      }
+
+      &-2 {
+        background: linear-gradient(
+          to right bottom,
+          rgba($color-primary-light, 0.8),
+          rgba($color-primary-dark, 0.8)
+        );
+      }
+
+      &-3 {
+        background: linear-gradient(
+          to right bottom,
+          rgba($color-tertiary-light, 0.8),
+          rgba($color-tertiary-dark, 0.8)
+        );
+      }
+    }
+  }
+
+  &__details {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 3rem;
+
+    ul {
+      list-style: none;
+
+      li {
+        padding: 1rem 0;
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-gray-light;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  &__price-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: $color-white;
+
+    &-only {
+      font-size: 2rem;
+    }
+
+    &-value {
+      margin: 2rem 0 6rem;
+      font-size: 9rem;
+      font-weight: 100;
+    }
   }
 }
