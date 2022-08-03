@@ -48,22 +48,32 @@
     $color-primary-light,
     $color-primary-dark
   );
+}
 
-  .book {
-    margin: 0 auto;
-    width: 70%;
-    min-height: 40rem;
-    background-image: url("./../../img/nat-10.jpg");
-    background-position: top;
-    background-size: cover;
-    // clip-path: polygon(0 0, 70% 0, 60% 100%, 0 100%);
+.book {
+  margin: 0 auto;
+  width: 75%;
+  // height: 100%;
+  // min-height: 40rem;
+  height: 40rem;
+  background: linear-gradient(
+      109deg,
+      rgba(255, 255, 255, 0.8) 50%,
+      transparent 50% 100%
+    ),
+    url(./../../img/nat-10.jpg);
+  background-position: top;
+  background-size: cover;
+  z-index: 10;
+  // clip-path: polygon(0 0, 70% 0, 60% 100%, 0 100%);
 
-    &__form {
-      background: linear-gradient(
-        to bottom right,
-        $color-primary-light,
-        $color-primary-dark
-      );
-    }
+  &__form {
+    z-index: 20;
+    height: 40rem;
+    padding: 2rem;
+    width: 50%;
+    // background-color: rgba($color-white, 0.5);
+    // clip-path: polygon(0 0, 60% 0, 45% 100%, 0 100%);
+    // -webkit-clip-path: polygon(0 0, 60% 0, 45% 100%, 0 100%);
   }
 }

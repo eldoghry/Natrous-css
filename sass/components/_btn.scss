@@ -9,6 +9,7 @@
     border-radius: 10rem;
     /* transition: all 0.5s ease-out; */
     position: relative;
+    outline: none;
 
     &::after {
       content: "";
@@ -24,7 +25,9 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
+    outline: none;
     transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
 
@@ -66,7 +69,9 @@
     border-bottom: 1px solid $color-primary;
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
+    outline: none;
     border-radius: $border-radius-small;
     transform: translateY(-0.3rem);
     box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
