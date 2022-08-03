@@ -45,6 +45,11 @@
     color: $color-gray-dark;
   }
 
+  &-green {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
   &-animate {
     animation: moveToTop 1s ease-out;
   }

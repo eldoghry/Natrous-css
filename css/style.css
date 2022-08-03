@@ -335,6 +335,10 @@ body {
   background-color: #fff;
   color: #777; }
 
+.btn-green {
+  background-color: #55c57a;
+  color: #fff; }
+
 .btn-animate {
   animation: moveToTop 1s ease-out; }
 
@@ -423,11 +427,24 @@ body {
     transform: skewY(7deg); }
 
 .section-tour {
-  padding: 25rem 0 15rem;
+  padding: 20rem 0 15rem;
   margin-top: -10rem;
   background-color: #eee; }
 
 .section-stories {
-  padding: 15rem 0;
+  padding: 20rem 0;
   margin-top: -10rem;
   position: relative; }
+
+.section-book {
+  padding: 20rem 0;
+  background: linear-gradient(to bottom right, #7ed56f, #28b485); }
+  .section-book .book {
+    margin: 0 auto;
+    width: 70%;
+    min-height: 40rem;
+    background-image: url("./../../img/nat-10.jpg");
+    background-position: top;
+    background-size: cover; }
+    .section-book .book__form {
+      background: linear-gradient(to bottom right, #7ed56f, #28b485); }
