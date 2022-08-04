@@ -416,6 +416,8 @@ body {
 .btn-green {
   background-color: #55c57a;
   color: #fff; }
+  .btn-green::after {
+    background-color: #55c57a; }
 
 .btn-animate {
   animation: moveToTop 1s ease-out; }
@@ -602,7 +604,8 @@ body {
     border-radius: 3px;
     padding: 0.1rem 0.5rem;
     transition: all 0.2s; }
-  .footer__link:hover {
+  .footer__link:hover, .footer__link:active, .footer__link:focus {
+    outline: none;
     background-color: #313131;
     color: #55c57a;
     transform: rotate(10deg) scale(1.1);
