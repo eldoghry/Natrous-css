@@ -56,23 +56,56 @@
   &__radio {
     &--group {
       display: inline-block;
+      width: 49%;
 
-      &:not(:last-child) {
-        margin-right: 1.5rem;
-      }
+      // &:not(:last-child) {
+      //   margin-right: 1.5rem;
+      // }
     }
 
     &--input {
-      accent-color: $color-primary;
+      // accent-color: $color-primary;
+      // display: none;
+      opacity: 0;
     }
 
     &--label {
+      padding-left: 1rem;
     }
 
-    &--span {
+    &--button {
       text-transform: capitalize;
       font-size: $font-size-small;
       font-weight: 700;
+      position: relative;
+      &::before,
+      &::after {
+        content: "";
+        display: inline-block;
+        border-radius: 50%;
+        position: absolute;
+      }
+
+      &::before {
+        width: 1.5rem;
+        height: 1.5rem;
+        border: 4px solid $color-primary;
+        top: -4px;
+        left: -3.1rem;
+      }
+
+      &::after {
+        width: 1.3rem;
+        height: 1.3rem;
+        background-color: $color-primary;
+        top: 1.2px;
+        left: -2.6rem;
+        opacity: 0;
+      }
+    }
+
+    &--input:checked + &--label &--button::after {
+      opacity: 1;
     }
   }
 }
