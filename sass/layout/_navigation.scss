@@ -1,0 +1,159 @@
+.navigation {
+  &__input {
+    display: none;
+  }
+
+  &__label {
+    width: 6rem;
+    height: 6rem;
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+    border-radius: 50%;
+    background-color: $color-gray-light;
+    display: inline-block;
+    position: fixed;
+    z-index: 2000;
+    top: 6rem;
+    right: 6rem;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
+      transform: translateY(-3px);
+    }
+
+    &:active {
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
+      transform: translateY(0);
+    }
+  }
+
+  &__button {
+    @include position-center;
+
+    &,
+    &:before,
+    &:after {
+      width: 2.8rem;
+      height: 0.25rem;
+      border-radius: 3px;
+      background-color: $color-gray-dark-1;
+      position: absolute;
+      transition: all 0.2s ease-out;
+    }
+
+    &:before,
+    &:after {
+      content: "";
+    }
+
+    &:before {
+      top: -0.8rem;
+    }
+    &:after {
+      top: 0.8rem;
+    }
+  }
+
+  &__background {
+    height: 5rem;
+    width: 5rem;
+
+    border-radius: 50%;
+    background-image: radial-gradient(
+      $color-primary-light,
+      $color-primary-dark
+    );
+
+    position: fixed;
+    right: 6.5rem;
+    top: 6.5rem;
+    z-index: 1000;
+    // transform-origin: center;
+    transition: all 0.5s cubic-bezier(0.49, -0.08, 0.26, 1);
+  }
+
+  &__list {
+    text-align: center;
+    list-style: none;
+    @include position-center;
+    z-index: 2000;
+    position: fixed;
+    opacity: 0;
+  }
+
+  &__item {
+    display: none;
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.49, -0.08, 0.26, 1);
+
+    &:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+  }
+  &__link {
+    &:visited,
+    &:link {
+      cursor: pointer;
+      display: block;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 1.2rem 1.4rem;
+      color: $color-white;
+      font-size: 3rem;
+      font-weight: 300;
+      background-image: linear-gradient(
+        120deg,
+        transparent 0,
+        transparent 50%,
+        $color-white 50%
+      );
+      background-size: 220%;
+      transition: all 0.5s cubic-bezier(1, 0.04, 0.33, 1.01);
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: $color-primary;
+      transform: translateX(1rem);
+      background-position: 100%;
+      outline: none;
+    }
+  }
+
+  //functionailty
+  &__label:hover &__button::before {
+    top: -1rem;
+  }
+
+  &__label:hover &__button::after {
+    top: 1rem;
+  }
+
+  &__input:checked + &__label &__button {
+    background-color: transparent;
+  }
+
+  &__input:checked + &__label &__button::before {
+    top: 0;
+    transform: rotate(-135deg);
+  }
+
+  &__input:checked + &__label &__button::after {
+    top: 0;
+    transform: rotate(135deg);
+  }
+
+  &__input:checked ~ &__list {
+    opacity: 1;
+  }
+
+  &__input:checked ~ &__list &__item {
+    display: contents;
+    opacity: 1;
+  }
+
+  &__input:checked ~ &__background {
+    transform: scale(70);
+  }
+}
