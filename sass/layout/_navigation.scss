@@ -16,6 +16,11 @@
     right: 6rem;
     cursor: pointer;
 
+    @include respond(tab-port) {
+      top: 3rem;
+      right: 3rem;
+    }
+
     &:hover {
       box-shadow: 0 1rem 2rem rgba($color-black, 0.4);
       transform: translateY(-3px);
@@ -70,6 +75,11 @@
     z-index: 1000;
     // transform-origin: center;
     transition: all 0.5s cubic-bezier(0.49, -0.08, 0.26, 1);
+
+    @include respond(tab-port) {
+      top: 3.5rem;
+      right: 3.5rem;
+    }
   }
 
   &__list {

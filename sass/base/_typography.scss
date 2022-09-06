@@ -16,6 +16,10 @@ body {
     font-size: 4rem;
     letter-spacing: 3rem;
     animation: moveToLeft 1s ease-out;
+
+    @include respond(phone) {
+      font-size: 3rem;
+    }
   }
   &--sub {
     display: inline-block;

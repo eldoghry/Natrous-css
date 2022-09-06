@@ -86,6 +86,9 @@ body {
     font-size: 4rem;
     letter-spacing: 3rem;
     animation: moveToLeft 1s ease-out; }
+    @media only screen and (max-width: 37.5em) {
+      .heading-primary--main {
+        font-size: 3rem; } }
   .heading-primary--sub {
     display: inline-block;
     font-size: 2rem;
@@ -180,8 +183,17 @@ body {
   overflow: hidden;
   z-index: 20;
   border-radius: 5px; }
+  @media only screen and (max-width: 56.25em) {
+    .story {
+      padding: 3rem;
+      width: 85%;
+      max-height: 30rem;
+      transform: skewX(0) scale(0.9); } }
   .story > * {
     transform: skewX(20deg); }
+    @media only screen and (max-width: 56.25em) {
+      .story > * {
+        transform: skewX(0); } }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -193,6 +205,9 @@ body {
     text-align: center;
     transform: translateY(-2rem) translateX(-2rem) skew(20deg);
     position: relative; }
+    @media only screen and (max-width: 56.25em) {
+      .story__shape {
+        transform: skewX(0); } }
   .story__img {
     height: 100%;
     clip-path: circle(50% at 50% 50%);
@@ -215,6 +230,9 @@ body {
   .story:hover .story__caption {
     opacity: 1;
     transform: translate(-50%, -50%); }
+  @media only screen and (max-width: 56.25em) {
+    .story__text {
+      padding-left: 9rem; } }
 
 .popup {
   width: 100%;
@@ -553,6 +571,10 @@ body {
   top: 6rem;
   right: 6rem;
   cursor: pointer; }
+  @media only screen and (max-width: 56.25em) {
+    .navigation__label {
+      top: 3rem;
+      right: 3rem; } }
   .navigation__label:hover {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
     transform: translateY(-3px); }
@@ -589,6 +611,10 @@ body {
   top: 6.5rem;
   z-index: 1000;
   transition: all 0.5s cubic-bezier(0.49, -0.08, 0.26, 1); }
+  @media only screen and (max-width: 56.25em) {
+    .navigation__background {
+      top: 3.5rem;
+      right: 3.5rem; } }
 
 .navigation__list {
   text-align: center;
@@ -716,6 +742,9 @@ body {
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      max-width: 70%; } }
   .row::after {
     content: "";
     display: table;
@@ -724,6 +753,17 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media only screen and (max-width: 75em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 3rem; } }
+      @media only screen and (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 3rem; } }
+    @media only screen and (max-width: 56.25em) {
+      .row [class^="col-"] {
+        float: none;
+        width: 100% !important; } }
   .row .col-1-of-1 {
     width: 100%; }
   .row .col-1-of-2 {

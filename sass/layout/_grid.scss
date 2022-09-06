@@ -6,6 +6,10 @@
     margin-bottom: $grid-gutter-vertical;
   }
 
+  @include respond(tab-port) {
+    max-width: 70%;
+  }
+
   @include clearfix;
 
   //selecting all classes ^ started with col-
@@ -17,6 +21,20 @@
 
     &:not(:last-child) {
       margin-right: $grid-gutter-horizantal;
+
+      @include respond(tab-land) {
+        margin-right: $grid-gutter-horizantal-small;
+      }
+
+      @include respond(tab-port) {
+        margin-right: 0;
+        margin-bottom: 3rem;
+      }
+    }
+
+    @include respond(tab-port) {
+      float: none;
+      width: 100% !important;
     }
   }
 
