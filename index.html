@@ -91,6 +91,7 @@
           </div>
           <div class="col-1-of-2">
             <div class="composition">
+              <!--  -->
               <img
                 src="./img/nat-1-large.jpg"
                 alt="Photo 1"
@@ -411,13 +412,54 @@
     </main>
 
     <footer>
-      <div class="footer">
+      <div class="footer" class="footer__logo">
         <div class="footer__logo-box">
-          <img
-            src="./img/logo-green-2x.png"
-            alt="photo logo"
-            class="footer__logo"
-          />
+          <!-- 
+            
+            Swithcing image based on art
+          <picture>
+            
+            picture can have multiple source,browser choose source based on current media queries
+            <source
+              srcset=""
+              media="(max-width: 37.5em)"
+            />
+            
+            <source
+              srcset=""
+              media="(max-width: 37.5em)"
+            />
+            
+            <source
+              srcset=""
+              media="(max-width: 37.5em)"
+            />
+
+
+            used as fullback
+            <img
+              srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x"
+              src="./img/logo-green-2x.png"
+              alt="photo logo"
+            />
+          </picture>
+          -->
+          <picture>
+            <source
+              srcset="
+                ./img/logo-green-small-1x.png 1x,
+                ./img/logo-green-small-2x.png 2x
+              "
+              media="(max-width: 37.5em)"
+            />
+
+            <!-- browser choose image based on density by adding srcset and give it different images for different density -->
+            <img
+              srcset="./img/logo-green-1x.png 1x, ./img/logo-green-2x.png 2x"
+              src="./img/logo-green-2x.png"
+              alt="photo logo"
+            />
+          </picture>
         </div>
 
         <div class="row">
