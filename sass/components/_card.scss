@@ -180,4 +180,61 @@
       font-weight: 100;
     }
   }
+
+  @include respond(tab-port) {
+    height: auto;
+    margin-bottom: 10rem;
+    background-color: $color-white;
+    max-width: 400px;
+    margin: 0 auto;
+
+    &__side {
+      position: relative;
+
+      &--front {
+        border-radius: 0;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+      }
+
+      &--back {
+        transform: rotateY(0deg);
+        opacity: 1;
+        top: 0rem;
+        height: 30rem;
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0deg);
+    }
+
+    &:hover &__side--back {
+      opacity: 1;
+      transform: rotateY(0deg);
+    }
+
+    &__price-box {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: $color-white;
+
+      &-only {
+        margin-top: 1rem;
+        font-size: 4rem;
+        font-weight: 200;
+      }
+
+      &-value {
+        margin: 0 0 1rem;
+        font-size: 4rem;
+        font-weight: 600;
+      }
+    }
+  }
 }
