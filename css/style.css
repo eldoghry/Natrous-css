@@ -195,15 +195,14 @@ body {
   overflow: hidden;
   z-index: 20;
   border-radius: 5px; }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 37.5em) {
     .story {
-      padding: 3rem;
-      width: 85%;
+      width: 100%;
       max-height: 30rem;
       transform: skewX(0) scale(0.9); } }
   .story > * {
     transform: skewX(20deg); }
-    @media only screen and (max-width: 56.25em) {
+    @media only screen and (max-width: 37.5em) {
       .story > * {
         transform: skewX(0); } }
   .story__shape {
@@ -216,8 +215,9 @@ body {
     -webkit-clip-path: circle(50% at 50% 50%);
     text-align: center;
     transform: translateY(-2rem) translateX(-2rem) skew(20deg);
-    position: relative; }
-    @media only screen and (max-width: 56.25em) {
+    position: relative;
+    margin-right: 2rem; }
+    @media only screen and (max-width: 37.5em) {
       .story__shape {
         transform: skewX(0); } }
   .story__img {
@@ -242,9 +242,6 @@ body {
   .story:hover .story__caption {
     opacity: 1;
     transform: translate(-50%, -50%); }
-  @media only screen and (max-width: 56.25em) {
-    .story__text {
-      padding-left: 9rem; } }
 
 .popup {
   width: 100%;
@@ -269,11 +266,22 @@ body {
   .popup__left {
     display: table-cell;
     width: 30%; }
+    @media only screen and (max-width: 75em) {
+      .popup__left {
+        width: 50%; } }
+    @media only screen and (max-width: 56.25em) {
+      .popup__left {
+        display: none;
+        width: 0; } }
   .popup__right {
     display: table-cell;
     width: 70%;
     padding: 2rem;
     vertical-align: middle; }
+    @media only screen and (max-width: 75em) {
+      .popup__right {
+        width: 50%;
+        overflow-y: scroll; } }
   .popup__img {
     width: 100%;
     display: block; }
@@ -287,6 +295,10 @@ body {
     column-rule: 1px solid #777;
     -moz-hyphens: auto;
     hyphens: auto; }
+    @media only screen and (max-width: 37.5em) {
+      .popup__paragraph {
+        -moz-column-count: 1;
+        column-count: 1; } }
   .popup__close, .popup__close:link, .popup__close:visited {
     width: 4rem;
     height: 4rem;
@@ -797,7 +809,10 @@ body {
     margin-bottom: 8rem; }
   @media only screen and (max-width: 56.25em) {
     .row {
-      max-width: 70%; } }
+      max-width: 85%; } }
+  @media only screen and (max-width: 56.25em) {
+    .row {
+      max-width: 95%; } }
   .row::after {
     content: "";
     display: table;
@@ -869,10 +884,27 @@ body {
   height: 40rem;
   background: linear-gradient(109deg, rgba(255, 255, 255, 0.8) 50%, transparent 50% 100%), url(./../../img/nat-10.jpg);
   background-position: top;
-  background-size: cover;
+  background-size: 100%;
   z-index: 10; }
+  @media only screen and (max-width: 56.25em) {
+    .book {
+      width: 95%; } }
+  @media only screen and (max-width: 75em) {
+    .book {
+      background: linear-gradient(109deg, rgba(255, 255, 255, 0.8) 65%, transparent 65% 100%), url(./../../img/nat-10.jpg);
+      background-size: cover; } }
+  @media only screen and (max-width: 37.5em) {
+    .book {
+      background: linear-gradient(109deg, rgba(255, 255, 255, 0.8) 100%, transparent 65% 100%), url(./../../img/nat-10.jpg);
+      background-size: cover; } }
   .book__form {
     z-index: 20;
     height: 40rem;
     padding: 2rem;
     width: 50%; }
+    @media only screen and (max-width: 75em) {
+      .book__form {
+        width: 65%; } }
+    @media only screen and (max-width: 37.5em) {
+      .book__form {
+        width: 100%; } }

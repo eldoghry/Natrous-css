@@ -12,9 +12,8 @@
   z-index: 20;
   border-radius: 5px;
 
-  @include respond(tab-port) {
-    padding: 3rem;
-    width: 85%;
+  @include respond(phone) {
+    width: 100%;
     max-height: 30rem;
     transform: skewX(0) scale(0.9);
   }
@@ -26,7 +25,7 @@
   & > * {
     transform: skewX(20deg);
 
-    @include respond(tab-port) {
+    @include respond(phone) {
       transform: skewX(0);
     }
   }
@@ -42,8 +41,9 @@
     text-align: center;
     transform: translateY(-2rem) translateX(-2rem) skew(20deg);
     position: relative;
+    margin-right: 2rem;
 
-    @include respond(tab-port) {
+    @include respond(phone) {
       transform: skewX(0);
     }
   }
@@ -78,11 +78,5 @@
     opacity: 1;
     transform: translate(-50%, -50%);
     // transform: translateY(-10rem);
-  }
-
-  &__text {
-    @include respond(tab-port) {
-      padding-left: 9rem;
-    }
   }
 }
