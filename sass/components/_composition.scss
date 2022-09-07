@@ -1,5 +1,9 @@
 .composition {
   position: relative;
+  @include respond(tab-port) {
+    display: flex;
+    flex-direction: row;
+  }
 
   &__image {
     width: 55%;
@@ -8,6 +12,11 @@
     position: absolute;
     z-index: 10;
     transition: all 0.2s;
+
+    @include respond(tab-port) {
+      position: relative;
+      width: 33.33333%;
+    }
 
     &--p1 {
       top: 0;
@@ -22,6 +31,11 @@
     &--p3 {
       top: 10rem;
       left: 8rem;
+
+      @include respond(tab-port) {
+        top: 0;
+        left: -1rem;
+      }
     }
 
     &:hover {

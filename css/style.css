@@ -137,6 +137,10 @@ body {
 
 .composition {
   position: relative; }
+  @media only screen and (max-width: 56.25em) {
+    .composition {
+      display: flex;
+      flex-direction: row; } }
   .composition__image {
     width: 55%;
     border-radius: 5px;
@@ -144,6 +148,10 @@ body {
     position: absolute;
     z-index: 10;
     transition: all 0.2s; }
+    @media only screen and (max-width: 56.25em) {
+      .composition__image {
+        position: relative;
+        width: 33.33333%; } }
     .composition__image--p1 {
       top: 0;
       left: 0; }
@@ -153,6 +161,10 @@ body {
     .composition__image--p3 {
       top: 10rem;
       left: 8rem; }
+      @media only screen and (max-width: 56.25em) {
+        .composition__image--p3 {
+          top: 0;
+          left: -1rem; } }
     .composition__image:hover {
       transform: scale(1.1) translateY(3px);
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
@@ -320,7 +332,8 @@ body {
     .card__side--front {
       background-color: #fff; }
     .card__side--back {
-      transform: rotateY(-180deg); }
+      transform: rotateY(-180deg);
+      top: -5rem; }
       .card__side--back-1 {
         background: linear-gradient(to right bottom, #ffb900, #ff7730); }
       .card__side--back-2 {
